@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 int index = Integer.parseInt(e1.getText().toString());
-                if (index < sia.size()) {
+                if (index >= 0 && index < sia.size()) {
                     sia.remove(index);
                     adapter.notifyDataSetChanged();
                     return;
