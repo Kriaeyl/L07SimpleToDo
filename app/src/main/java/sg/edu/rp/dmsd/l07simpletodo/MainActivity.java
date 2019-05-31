@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button b3;
     ArrayList<String> sia = new ArrayList<>();
     ListView l1;
+    ArrayAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         b3 = findViewById(R.id.button3);
 
         l1 = findViewById(R.id.listView);
-        final ArrayAdapter adapter = new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,sia);
+        adapter = new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,sia);
         l1.setAdapter(adapter);
 
         b1.setOnClickListener(new View.OnClickListener() {
