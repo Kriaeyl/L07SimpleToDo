@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SimpleToDo</string>
+    <string name="Add">Add</string>
+    <string name="Delete">Delete</string>
+    <string name="Clear">Clear</string>
+    <string-array name="sItems">
+        <item>Add A New Task</item>
+        <item>Remove A Task</item>
+    </string-array>
+</resources>
