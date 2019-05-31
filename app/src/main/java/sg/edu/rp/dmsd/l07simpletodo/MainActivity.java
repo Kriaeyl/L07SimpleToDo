@@ -2,6 +2,7 @@ package sg.edu.rp.dmsd.l07simpletodo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -55,14 +56,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "You don't have any task to remove", Toast.LENGTH_LONG).show();
                     return;
                 }
-                String text = e1.getText().toString();
-                if (text.matches("\\d+(?:\\.\\d+)?")) {
-                    int index = Integer.parseInt(text);
-                    if (index < sia.size()) {
-                        sia.remove(index);
-                        adapter.notifyDataSetChanged();
-                        return;
-                    }
+                int index = Integer.parseInt(e1.getText().toString());
+                if (index < sia.size()) {
+                    sia.remove(index);
+                    adapter.notifyDataSetChanged();
+                    return;
                 }
                 Toast.makeText(MainActivity.this, "Wrong Index Number", Toast.LENGTH_LONG).show();
                 return;
@@ -86,11 +84,13 @@ public class MainActivity extends AppCompatActivity {
                         b1.setEnabled(true);
                         b2.setEnabled(false);
                         e1.setHint("Type in a new Task Here");
+                        e1.setInputType(InputType.TYPE_CLASS_TEXT);
                         break;
                     case 1:
                         b2.setEnabled(true);
                         b1.setEnabled(false);
                         e1.setHint("Type in the index of the task to be removed");
+                        e1.setInputType(InputType.TYPE_CLASS_NUMBER);
                         break;
                 }
             }
